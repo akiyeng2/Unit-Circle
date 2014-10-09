@@ -1,0 +1,203 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<title>Unit Circle Quiz-no tangents</title>
+<meta charset="utf-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+	<script src="http://code.jquery.com/jquery-latest.js"></script>
+<script src="https://google-code-prettify.googlecode.com/svn/loader/run_prettify.js"></script>
+
+    <!-- Le styles -->
+    <link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.css"/>
+	<link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap-responsive.css"/>
+    <style type="text/css">
+         .footer{
+      	position:absolute;
+      	margin:0px;
+      	bottom:0px;
+      	padding:10px;
+      	width:100%;
+      	text-align:center;
+      	
+      }
+      body {
+        padding-top: 60px;
+        padding-bottom: 40px;
+      }
+      .dropdown-menu{
+/*       	position:relative; */
+/*       	top:-10px; */
+      }
+      @media(min-width:979px){
+      .sidebar{
+
+        position: fixed;
+		top:60px;
+        float: left;
+        max-width:200px;
+        min-width:200px;
+	
+      }
+     
+	}
+	
+      @media (max-width: 768px) {
+        /* Enable use of floated navbar text */
+        .navbar-text.pull-right {
+          float: none;
+          padding-left: 5px;
+          padding-right: 5px;
+        }
+.container-fluid{
+        	float:right;
+        	
+        }
+       
+        
+        
+        #highscores{
+      		display:none;
+      	}
+      }
+      #questions{
+      	display:none;
+      }
+      
+    </style>
+	 
+   <link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap-responsive.css"/>
+
+    <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="../assets/js/html5shiv.js"></script>	
+    <![endif]-->
+
+    <!-- Fav and touch icons -->
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="../assets/ico/apple-touch-icon-144-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="../assets/ico/apple-touch-icon-114-precomposed.png">
+      <link rel="apple-touch-icon-precomposed" sizes="72x72" href="../assets/ico/apple-touch-icon-72-precomposed.png">
+                    <link rel="apple-touch-icon-precomposed" href="../assets/ico/apple-touch-icon-57-precomposed.png">
+                                   <link rel="shortcut icon" href="../assets/ico/favicon.png"><head>
+</head>
+
+  <body onload="load()">
+	
+     <div class="navbar navbar-inverse navbar-fixed-top">
+    
+      <div class="navbar-inner">
+        <div class="container-fluid">
+          <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="brand" href="index.php">Unit Circle Quiz</a>
+          <div class="nav-collapse collapse">
+            
+            <ul class="nav">
+            <li class="dropdown">
+                <a href="index.html">Home</a>
+              </li>
+              <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Quizzes <b class="caret"></b></a>
+                <ul class="dropdown-menu">
+                  <li><a href="quiz.html">10 question quiz (With tangents)</a></li>
+                  <li><a href="quiznotan.html">10 question quiz (No tangents)</a></li>
+                  <li><a href="full.html">Full quiz</a></li>
+	              <li><a href="circle.html">Unit Circle Quiz</a></li>
+                </ul>
+              </li>
+               
+            </ul>
+          </div><!--/.nav-collapse -->
+        </div>
+      </div>
+    </div>
+    <div class="container-fluid">
+      <div class="row-fluid">
+        <div class="span3">
+          <div class="well sidebar">
+          	<h3>Time remaining:</h3>
+             <div id="time"><h3>0:00</h3></div>
+			<div id="highscores">
+				<ol>
+					<li>Amalan</li>
+					<li>Amalan</li>
+					<li>Amalan</li>
+					<li>Amalan</li>
+				</ol>
+			</div>
+          </div><!--/.well -->
+          
+		</div><!--/span-->
+		
+        <div class="span9">
+          
+          
+          <div class="span10 well" id="qs"  style="border-radius:10px">
+            <h1>10 Question Quiz (No tangents)</h1>
+          	<div id="settings">
+	 			Length of test: <input type="number" value="300" max="300" min="10" id='seconds'/> seconds
+	 			<button type="button"  class="btn-primary btn" onclick="start()">Start!</button><br>
+	 			Instructions: This quiz is a 10-question quiz on Unit Circle values from 0 to 2π. When answering, use these guidelines
+	 			<ul>
+	 				<li>Do not enter spaces</li>
+	 				<li>If a value is $ \infty $, leave it blank</li>
+	 				<li>Enter things in square roots in parantheses, and negative signs come at the beginning, for example: -(3)/2 would be <img width="20px" src="sqrt.png"/></li>
+	 			</ul> 
+	 </div>
+          	<ol id="questions"></ol>
+          	<button type="button" class="btn-primary btn" onclick="check()">Check</button>
+          </div>
+          
+         
+        </div><!--/span-->
+      </div><!--/row-->
+
+      <hr>
+
+      <footer class="footer well">
+		
+		
+	   &copy; Amalan Iyengar 2013
+		
+      </footer>
+
+    </div><!--/.fluid-container-->
+	
+	
+	<script src="bootstrap/js/bootstrap.js"></script>
+
+
+    <script>
+
+
+
+/* 	$('.navbar .dropdown').hover(function() {
+
+		if(window.innerWidth>980){
+  			$('.dropdown-menu', this).slideToggle(250);
+		}else{
+			  $('.dropdown-menu', this).toggleClass('open');
+
+		}
+	}); */
+	</script>
+	<script>
+	
+	</script>
+	<script type="text/javascript">
+			var qs;
+		</script>
+		<script type="text/x-mathjax-config">
+  			MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
+		</script>
+        <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+		<script type="text/javascript" src="sourcenotan.js"></script>
+		<script type='text/javascript' src='questions.js'></script> 
+	
+  </body>
+</html>

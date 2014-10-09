@@ -1,0 +1,452 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="shortcut icon" href="../../docs-assets/ico/favicon.png">
+
+    <title>Sticky Footer Navbar Template for Bootstrap</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="bootstrap/css/bootstrap.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    
+
+    
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+    <![endif]-->
+    <style>
+    /* Sticky footer styles
+-------------------------------------------------- */
+
+html,
+body {
+  height: 100%;
+  /* The html and body elements cannot have any padding or margin. */
+}
+
+/* Wrapper for page content to push down footer */
+#wrap {
+  min-height: 100%;
+  height: auto;
+  /* Negative indent footer by its height */
+  margin: 0 auto -60px;
+  /* Pad bottom by footer height */
+  padding: 0 0 60px;
+}
+
+/* Set the fixed height of the footer here */
+#footer {
+  height: 60px;
+  background-color: #f5f5f5;
+}
+
+
+/* Custom page CSS
+-------------------------------------------------- */
+/* Not required for template or sticky footer method. */
+
+#wrap > .container {
+  padding: 60px 15px 0;
+}
+.container .credit {
+  margin: 20px 0;
+}
+
+#footer > .container {
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+code {
+  font-size: 80%;
+}
+    </style>
+    <style>
+	body{
+		white-space:nowrap;
+	}
+	canvas{
+		z-index:-1;
+	}
+	.sin{
+		width:3em;
+	}
+	
+	.cos{
+		width:3em;
+	}
+	.rad{
+		width:4em;
+	}
+	.deg{
+		width:2em;
+	}.degsym{
+		position:relative;
+		top:-5px;
+	}
+	#q1{
+		position:relative;
+		top:355px;
+		left:520px;
+	}
+	#q2{
+		position:relative;
+		top: 220px;
+		left:540px;
+	}
+	#deg1{
+		padding-right:20px;
+		padding-left:50px;
+	}
+	#deg2{
+		position:relative;
+		top:25px;
+	}#rad2{
+		position:relative;
+		bottom:10px;
+	}
+	#coord2{
+		position:relative;
+		bottom:25px;
+	}
+	#q3{
+		position:relative;
+		top:200px;
+		left:500px;		
+	}#rad3{
+		position:relative;
+		bottom:50px;
+		right:10px;
+	}#coord3{
+		position:relative;
+		bottom:70px;
+		right:15px;
+	}
+	#q4{
+		position:relative;
+		top:170px;
+		left:450px;
+	}#rad4{
+		position:relative;
+		bottom:60px;
+		right:30px;
+	}#coord4{
+		position:relative;
+		bottom:90px;
+		right:30px;
+	}#q5{
+		position:relative;
+		left:349px;
+		top:65px;
+	}#coord5{
+		position:relative;
+		bottom:30px;
+		right:90px;
+	}#q6{
+		position:relative;
+		top:75px;
+		left:0px;
+	}#rad6{
+		position:relative;
+		left:210px;
+		top:32px;
+	}#deg6{
+		position:relative;
+		left:285px;
+		top:94px;
+	}#q7{
+		position:relative;
+		left:-75px;
+		top:130px;
+	}#deg7{
+		position:relative;
+		left:300px;
+		top:70px;
+	}#rad7{
+		position:relative;
+		left:218px;
+		top:22px;
+	}
+	#q8{
+		position:relative;
+		left:-125px;
+		top:205px;		
+	}#deg8{
+		position:relative;
+		left:310px;
+		top:38px;
+	}#rad8{
+		position:relative;
+		left:210px;
+		top:4px;
+	}#q9{
+		position:relative;
+		top:355px;
+		left:70px;	
+	}#coord9{
+		position:relative;
+		top:30px;
+		right:30px;
+	}#q10{
+		position:relative;
+		left:-120px;
+		top:540px;
+	}#deg10{
+		position:relative;
+		left:310px;
+		bottom:90px;
+	}#rad10{
+		position:relative;
+		left:200px;
+		bottom:62px;
+	}#q11{
+		position:relative;
+		left:-80px;
+		top:600px;
+	}#deg11{
+		position:relative;
+		left:305px;
+		bottom:110px;
+	}#rad11{
+		position:relative;
+		left:180px;
+		bottom:60px;
+	
+	}#q12{
+		position:relative;
+		left:-10px;
+		top:660px;
+	}#rad12{
+		position:relative;
+		left:150px;
+		bottom:65px;
+	}
+	#deg12{
+		position:relative;
+		left:250px;
+		bottom:110px;
+	}#q13{
+		position:relative;
+		top:680px;
+		left:348px;
+	}#coord13{
+		position:relative;
+		top:30px;
+		right:80px;
+	}#q14{
+		position:relative;
+		top:660px;
+		left:420px;
+	}#rad14{
+		position:relative;
+		left:65px;
+		bottom:60px;
+	}#deg14{
+		position:relative;
+		bottom:100px;
+		left:80px;
+	}
+	#q15{
+		position:relative;
+		top:600px;
+		left:495px;
+	}#rad15{
+		position:relative;
+		bottom:60px;
+		left:35px;
+	}#deg15{
+		position:relative;
+		bottom:98px;
+		left:30px;
+	}#q16{
+		position:relative;
+		top:535px;	
+		left:545px;
+		
+	}
+	#deg16{
+		position:relative;
+		bottom:80px;
+	}
+	#rad16{
+		position:relative;
+		bottom:60px;
+	}
+	#quiz{
+		display:none;
+	}
+
+	
+  </head>
+
+
+
+</style>
+  <body>
+
+    <!-- Wrap all page content here -->
+    <div id="wrap">
+
+      <!-- Fixed navbar -->
+      <div class="navbar navbar-default navbar-fixed-top">
+        <div class="container">
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#">Project name</a>
+          </div>
+          <div class="collapse navbar-collapse">
+            <ul class="nav navbar-nav">
+              <li class="active"><a href="#">Home</a></li>
+              <li><a href="#about">About</a></li>
+              <li><a href="#contact">Contact</a></li>
+              <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <b class="caret"></b></a>
+                <ul class="dropdown-menu">
+                  <li><a href="#">Action</a></li>
+                  <li><a href="#">Another action</a></li>
+                  <li><a href="#">Something else here</a></li>
+                  <li class="divider"></li>
+                  <li class="dropdown-header">Nav header</li>
+                  <li><a href="#">Separated link</a></li>
+                  <li><a href="#">One more separated link</a></li>
+                </ul>
+              </li>
+            </ul>
+          </div><!--/.nav-collapse -->
+        </div>
+      </div>
+
+      <!-- Begin page content -->
+      <div class="container">
+        <div class="page-header">
+          <h1>Sticky footer with fixed navbar</h1>
+        </div>
+         <div id="settings">
+ 	Length of test: <input type="number" value="300" max="300" min="1" id='seconds'/> seconds
+ 	<button type="button" onclick="start()">Start!</button><br>
+ 	Instructions: This quiz on is a unit circle, a circle with a radius of one which has interesting coordinates at different places on it. The unit circle is often quizzed on in Precalculus and Calculus classes.<br>
+ 	<ul>
+ 		<li>Degree measures: Just enter the number of degrees, for example 150</li>
+ 		<li>Radian measures: Enter the radian measure, except instead of π,  use the word pi, for example, 11pi/6 or 2pi
+ 		<li>Sin and Cosine measures: Enter things in square roots in parantheses, and negative signs come at the beginning, for example: -(3)/2 would be <img width="20px" src="sqrt.png"/></li>
+ 	</ul> 
+ 		</div>
+		<div id="quiz">
+		 <img src="uc.gif" alt="Unit circle"/>
+		 <div id="q1">
+			<span id='deg1'><input type="text" class="deg"  maxlength="3"/><span class='degsym'>&deg;</span></span>
+			<span id='rad1'><input type="text" class="rad" maxlength='6'>rad </span> 
+			&nbsp;&nbsp;&nbsp;<span id='coord1'>(<input type="text" class="sin" maxlength="6"/> , <input type="text" class="cos" maxlength="6"/>)</span>
+		</div>
+		<div id="q2">
+			<span id='deg2'><input type="text" class="deg"  maxlength="3"></input><span class='degsym'>&deg;</span></span>
+			<span id='rad2'><input type="text" class="rad" maxlength='6'>rad </span> 
+			&nbsp;&nbsp;&nbsp;<span id='coord2'>(<input type="text" class="sin" maxlength="6"/> , <input type="text" class="cos" maxlength="6"/>)</span>
+		</div>
+		<div id="q3">
+			<span id='deg3'><input type="text" class="deg"  maxlength="3"></input><span class='degsym'>&deg;</span></span>
+			<span id='rad3'><input type="text" class="rad" maxlength='6'>rad </span> 
+			&nbsp;&nbsp;&nbsp;<span id='coord3'>(<input type="text" class="sin" maxlength="6"/> , <input type="text" class="cos" maxlength="6"/>)</span>
+		</div>
+		<div id="q4">
+			<span id='deg4'><input type="text" class="deg"  maxlength="3"></input><span class='degsym'>&deg;</span></span>
+			<span id='rad4'><input type="text" class="rad" maxlength='6'>rad </span> 
+			&nbsp;&nbsp;&nbsp;<span id='coord4'>(<input type="text" class="sin" maxlength="6"/> , <input type="text" class="cos" maxlength="6"/>)</span>
+		</div>
+		<div id="q5">
+			<span id='deg5'><input type="text" class="deg"  maxlength="3"></input><span class='degsym'>&deg;</span></span>
+			<span id='rad5'><input type="text" class="rad" maxlength='6'>rad </span> 
+			&nbsp;&nbsp;&nbsp;<span id='coord5'>(<input type="text" class="sin" maxlength="6"/> , <input type="text" class="cos" maxlength="6"/>)</span>
+		</div>
+		<div id="q6">
+			<span id='deg6'><input type="text" class="deg"  maxlength="3"></input><span class='degsym'>&deg;</span></span>
+			<span id='rad6'><input type="text" class="rad" maxlength='6'>rad </span> 
+			&nbsp;&nbsp;&nbsp;<span id='coord6'>(<input type="text" class="sin" maxlength="6"/> , <input type="text" class="cos" maxlength="6"/>)</span>
+		</div>
+		<div id="q7">
+			<span id='deg7'><input type="text" class="deg"  maxlength="3"></input><span class='degsym'>&deg;</span></span>
+			<span id='rad7'><input type="text" class="rad" maxlength='6'>rad </span> 
+			&nbsp;&nbsp;&nbsp;<span id='coord7'>(<input type="text" class="sin" maxlength="6"/> , <input type="text" class="cos" maxlength="6"/>)</span>
+		</div>
+		<div id="q8">
+			<span id='deg8'><input type="text" class="deg"  maxlength="3"></input><span class='degsym'>&deg;</span></span>
+			<span id='rad8'><input type="text" class="rad" maxlength='6'>rad </span> 
+			&nbsp;&nbsp;&nbsp;<span id='coord8'>(<input type="text" class="sin" maxlength="6"/> , <input type="text" class="cos" maxlength="6"/>)</span>
+		</div>
+		<div id="q9">
+			<span id='deg9'><input type="text" class="deg"  maxlength="3"></input><span class='degsym'>&deg;</span></span>
+			<span id='rad9'><input type="text" class="rad" maxlength='6'>rad </span> 
+			&nbsp;&nbsp;&nbsp;<span id='coord9'>(<input type="text" class="sin" maxlength="6"/> , <input type="text" class="cos" maxlength="6"/>)</span>
+		</div>
+		<div id="q10">
+			<span id='deg10'><input type="text" class="deg"  maxlength="3"></input><span class='degsym'>&deg;</span></span>
+			<span id='rad10'><input type="text" class="rad" maxlength='6'>rad </span> 
+			&nbsp;&nbsp;&nbsp;<span id='coord10'>(<input type="text" class="sin" maxlength="6"/> , <input type="text" class="cos" maxlength="6"/>)</span>
+		</div>
+		<div id="q11">
+			<span id='deg11'><input type="text" class="deg"  maxlength="3"></input><span class='degsym'>&deg;</span></span>
+			<span id='rad11'><input type="text" class="rad" maxlength='6'>rad </span> 
+			&nbsp;&nbsp;&nbsp;<span id='coord11'>(<input type="text" class="sin" maxlength="6"/> , <input type="text" class="cos" maxlength="6"/>)</span>
+		</div>
+		<div id="q12">
+			<span id='deg12'><input type="text" class="deg"  maxlength="3"></input><span class='degsym'>&deg;</span></span>
+			<span id='rad12'><input type="text" class="rad" maxlength='6'>rad </span> 
+			&nbsp;&nbsp;&nbsp;<span id='coord12'>(<input type="text" class="sin" maxlength="6"/> , <input type="text" class="cos" maxlength="6"/>)</span>
+		</div>
+		<div id="q13">
+			<span id='deg13'><input type="text" class="deg"  maxlength="3"></input><span class='degsym'>&deg;</span></span>
+			<span id='rad13'><input type="text" class="rad" maxlength='6'>rad </span> 
+			&nbsp;&nbsp;&nbsp;<span id='coord13'>(<input type="text" class="sin" maxlength="6"/> , <input type="text" class="cos" maxlength="6"/>)</span>
+		</div>
+		<div id="q14">
+			<span id='deg14'><input type="text" class="deg"  maxlength="3"></input><span class='degsym'>&deg;</span></span>
+			<span id='rad14'><input type="text" class="rad" maxlength='6'>rad </span> 
+			&nbsp;&nbsp;&nbsp;<span id='coord14'>(<input type="text" class="sin" maxlength="6"/> , <input type="text" class="cos" maxlength="6"/>)</span>
+		</div>
+		<div id="q15">
+			<span id='deg15'><input type="text" class="deg"  maxlength="3"></input><span class='degsym'>&deg;</span></span>
+			<span id='rad15'><input type="text" class="rad" maxlength='6'>rad </span> 
+			&nbsp;&nbsp;&nbsp;<span id='coord15'>(<input type="text" class="sin" maxlength="6"/> , <input type="text" class="cos" maxlength="6"/>)</span>
+		</div>
+		<div id="q16">
+			<span id='deg16'><input type="text" class="deg"  maxlength="3"></input><span class='degsym'>&deg;</span></span>
+			<span id='rad16'><input type="text" class="rad" maxlength='6'>rad </span> 
+			&nbsp;&nbsp;&nbsp;<span id='coord16'>(<input type="text" class="sin" maxlength="6"/> , <input type="text" class="cos" maxlength="6"/>)</span>
+		</div>
+		<button type="button" onclick="check()">Check my answers</button>
+		</div>
+		<div id="timer" style="position:absolute;top:5px;"></div>
+
+      </div>
+    </div>
+
+    <div id="footer">
+      <div class="container">
+        <p class="text-muted credit">Example courtesy <a href="http://martinbean.co.uk">Martin Bean</a> and <a href="http://ryanfait.com/sticky-footer/">Ryan Fait</a>.</p>
+      </div>
+    </div>
+
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+    <script src="bootstrap/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="circle.js"></script>
+    
+  </body>
+</html>

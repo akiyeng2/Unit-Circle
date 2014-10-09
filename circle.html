@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Unit Circle Quiz</title>
+<style>
+	body{
+		white-space:nowrap;
+	}
+	canvas{
+		z-index:-1;
+	}
+	.sin{
+		width:3em;
+	}
+	
+	.cos{
+		width:3em;
+	}
+	.rad{
+		width:4em;
+	}
+	.deg{
+		width:2em;
+	}.degsym{
+		position:relative;
+		top:-5px;
+	}
+	#q1{
+		position:absolute;
+		top:355px;
+		left:520px;
+	}
+	#q2{
+		position:absolute;
+		top: 220px;
+		left:540px;
+	}
+	#deg1{
+		padding-right:20px;
+		padding-left:50px;
+	}
+	#deg2{
+		position:relative;
+		top:25px;
+	}#rad2{
+		position:relative;
+		bottom:10px;
+	}
+	#coord2{
+		position:relative;
+		bottom:25px;
+	}
+	#q3{
+		position:absolute;
+		top:200px;
+		left:500px;		
+	}#rad3{
+		position:relative;
+		bottom:50px;
+		right:10px;
+	}#coord3{
+		position:relative;
+		bottom:70px;
+		right:15px;
+	}
+	#q4{
+		position:absolute;
+		top:170px;
+		left:450px;
+	}#rad4{
+		position:relative;
+		bottom:60px;
+		right:30px;
+	}#coord4{
+		position:relative;
+		bottom:90px;
+		right:30px;
+	}#q5{
+		position:absolute;
+		left:349px;
+		top:65px;
+	}#coord5{
+		position:relative;
+		bottom:30px;
+		right:90px;
+	}#q6{
+		position:absolute;
+		top:75px;
+		left:0px;
+	}#rad6{
+		position:relative;
+		left:210px;
+		top:32px;
+	}#deg6{
+		position:relative;
+		left:285px;
+		top:94px;
+	}#q7{
+		position:absolute;
+		left:-75px;
+		top:130px;
+	}#deg7{
+		position:relative;
+		left:300px;
+		top:70px;
+	}#rad7{
+		position:relative;
+		left:218px;
+		top:22px;
+	}
+	#q8{
+		position:absolute;
+		left:-125px;
+		top:205px;		
+	}#deg8{
+		position:relative;
+		left:310px;
+		top:38px;
+	}#rad8{
+		position:relative;
+		left:210px;
+		top:4px;
+	}#q9{
+		position:absolute;
+		top:355px;
+		left:70px;	
+	}#coord9{
+		position:absolute;
+		top:30px;
+		right:30px;
+	}#q10{
+		position:absolute;
+		left:-120px;
+		top:540px;
+	}#deg10{
+		position:relative;
+		left:310px;
+		bottom:90px;
+	}#rad10{
+		position:relative;
+		left:200px;
+		bottom:62px;
+	}#q11{
+		position:absolute;
+		left:-80px;
+		top:600px;
+	}#deg11{
+		position:relative;
+		left:305px;
+		bottom:110px;
+	}#rad11{
+		position:relative;
+		left:180px;
+		bottom:60px;
+	
+	}#q12{
+		position:absolute;
+		left:-10px;
+		top:660px;
+	}#rad12{
+		position:relative;
+		left:150px;
+		bottom:65px;
+	}
+	#deg12{
+		position:relative;
+		left:250px;
+		bottom:110px;
+	}#q13{
+		position:absolute;
+		top:680px;
+		left:348px;
+	}#coord13{
+		position:relative;
+		top:30px;
+		right:80px;
+	}#q14{
+		position:absolute;
+		top:660px;
+		left:420px;
+	}#rad14{
+		position:relative;
+		left:65px;
+		bottom:60px;
+	}#deg14{
+		position:relative;
+		bottom:100px;
+		left:80px;
+	}
+	#q15{
+		position:absolute;
+		top:600px;
+		left:495px;
+	}#rad15{
+		position:relative;
+		bottom:60px;
+		left:35px;
+	}#deg15{
+		position:relative;
+		bottom:98px;
+		left:30px;
+	}#q16{
+		position:absolute;
+		top:535px;	
+		left:545px;
+		
+	}
+	#deg16{
+		position:relative;
+		bottom:80px;
+	}
+	#rad16{
+		position:relative;
+		bottom:60px;
+	}
+	#quiz{
+		display:none;
+	}
+
+	
+
+
+</style>
+</head>
+
+<body>
+<!-- <canvas width="710" height="710"></canvas>
+
+ -->
+	 <div id="settings">
+	 	Length of test: <input type="number" value="300" max="300" min="1" id='seconds'/> seconds
+	 	<button type="button" onclick="start()">Start!</button><br>
+	 	Instructions: This quiz on is a unit circle, a circle with a radius of one which has interesting coordinates at different places on it. The unit circle is often quizzed on in Precalculus and Calculus classes.<br>
+	 	<ul>
+	 		<li>Degree measures: Just enter the number of degrees, for example 150</li>
+	 		<li>Radian measures: Enter the radian measure, except instead of π,  use the word pi, for example, 11pi/6 or 2pi
+	 		<li>Sin and Cosine measures: Enter things in square roots in parantheses, and negative signs come at the beginning, for example: -(3)/2 would be <img width="20px" src="sqrt.png"/></li>
+	 	</ul> 
+	 </div>
+	<div id="quiz">
+	 <img src="uc.gif" alt="Unit circle"/>
+	 <div id="q1">
+		<span id='deg1'><input type="text" class="deg"  maxlength="3"/><span class='degsym'>&deg;</span></span>
+		<span id='rad1'><input type="text" class="rad" maxlength='6'>rad </span> 
+		&nbsp;&nbsp;&nbsp;<span id='coord1'>(<input type="text" class="sin" maxlength="6"/> , <input type="text" class="cos" maxlength="6"/>)</span>
+	</div>
+	<div id="q2">
+		<span id='deg2'><input type="text" class="deg"  maxlength="3"></input><span class='degsym'>&deg;</span></span>
+		<span id='rad2'><input type="text" class="rad" maxlength='6'>rad </span> 
+		&nbsp;&nbsp;&nbsp;<span id='coord2'>(<input type="text" class="sin" maxlength="6"/> , <input type="text" class="cos" maxlength="6"/>)</span>
+	</div>
+	<div id="q3">
+		<span id='deg3'><input type="text" class="deg"  maxlength="3"></input><span class='degsym'>&deg;</span></span>
+		<span id='rad3'><input type="text" class="rad" maxlength='6'>rad </span> 
+		&nbsp;&nbsp;&nbsp;<span id='coord3'>(<input type="text" class="sin" maxlength="6"/> , <input type="text" class="cos" maxlength="6"/>)</span>
+	</div>
+	<div id="q4">
+		<span id='deg4'><input type="text" class="deg"  maxlength="3"></input><span class='degsym'>&deg;</span></span>
+		<span id='rad4'><input type="text" class="rad" maxlength='6'>rad </span> 
+		&nbsp;&nbsp;&nbsp;<span id='coord4'>(<input type="text" class="sin" maxlength="6"/> , <input type="text" class="cos" maxlength="6"/>)</span>
+	</div>
+	<div id="q5">
+		<span id='deg5'><input type="text" class="deg"  maxlength="3"></input><span class='degsym'>&deg;</span></span>
+		<span id='rad5'><input type="text" class="rad" maxlength='6'>rad </span> 
+		&nbsp;&nbsp;&nbsp;<span id='coord5'>(<input type="text" class="sin" maxlength="6"/> , <input type="text" class="cos" maxlength="6"/>)</span>
+	</div>
+	<div id="q6">
+		<span id='deg6'><input type="text" class="deg"  maxlength="3"></input><span class='degsym'>&deg;</span></span>
+		<span id='rad6'><input type="text" class="rad" maxlength='6'>rad </span> 
+		&nbsp;&nbsp;&nbsp;<span id='coord6'>(<input type="text" class="sin" maxlength="6"/> , <input type="text" class="cos" maxlength="6"/>)</span>
+	</div>
+	<div id="q7">
+		<span id='deg7'><input type="text" class="deg"  maxlength="3"></input><span class='degsym'>&deg;</span></span>
+		<span id='rad7'><input type="text" class="rad" maxlength='6'>rad </span> 
+		&nbsp;&nbsp;&nbsp;<span id='coord7'>(<input type="text" class="sin" maxlength="6"/> , <input type="text" class="cos" maxlength="6"/>)</span>
+	</div>
+	<div id="q8">
+		<span id='deg8'><input type="text" class="deg"  maxlength="3"></input><span class='degsym'>&deg;</span></span>
+		<span id='rad8'><input type="text" class="rad" maxlength='6'>rad </span> 
+		&nbsp;&nbsp;&nbsp;<span id='coord8'>(<input type="text" class="sin" maxlength="6"/> , <input type="text" class="cos" maxlength="6"/>)</span>
+	</div>
+	<div id="q9">
+		<span id='deg9'><input type="text" class="deg"  maxlength="3"></input><span class='degsym'>&deg;</span></span>
+		<span id='rad9'><input type="text" class="rad" maxlength='6'>rad </span> 
+		&nbsp;&nbsp;&nbsp;<span id='coord9'>(<input type="text" class="sin" maxlength="6"/> , <input type="text" class="cos" maxlength="6"/>)</span>
+	</div>
+	<div id="q10">
+		<span id='deg10'><input type="text" class="deg"  maxlength="3"></input><span class='degsym'>&deg;</span></span>
+		<span id='rad10'><input type="text" class="rad" maxlength='6'>rad </span> 
+		&nbsp;&nbsp;&nbsp;<span id='coord10'>(<input type="text" class="sin" maxlength="6"/> , <input type="text" class="cos" maxlength="6"/>)</span>
+	</div>
+	<div id="q11">
+		<span id='deg11'><input type="text" class="deg"  maxlength="3"></input><span class='degsym'>&deg;</span></span>
+		<span id='rad11'><input type="text" class="rad" maxlength='6'>rad </span> 
+		&nbsp;&nbsp;&nbsp;<span id='coord11'>(<input type="text" class="sin" maxlength="6"/> , <input type="text" class="cos" maxlength="6"/>)</span>
+	</div>
+	<div id="q12">
+		<span id='deg12'><input type="text" class="deg"  maxlength="3"></input><span class='degsym'>&deg;</span></span>
+		<span id='rad12'><input type="text" class="rad" maxlength='6'>rad </span> 
+		&nbsp;&nbsp;&nbsp;<span id='coord12'>(<input type="text" class="sin" maxlength="6"/> , <input type="text" class="cos" maxlength="6"/>)</span>
+	</div>
+	<div id="q13">
+		<span id='deg13'><input type="text" class="deg"  maxlength="3"></input><span class='degsym'>&deg;</span></span>
+		<span id='rad13'><input type="text" class="rad" maxlength='6'>rad </span> 
+		&nbsp;&nbsp;&nbsp;<span id='coord13'>(<input type="text" class="sin" maxlength="6"/> , <input type="text" class="cos" maxlength="6"/>)</span>
+	</div>
+	<div id="q14">
+		<span id='deg14'><input type="text" class="deg"  maxlength="3"></input><span class='degsym'>&deg;</span></span>
+		<span id='rad14'><input type="text" class="rad" maxlength='6'>rad </span> 
+		&nbsp;&nbsp;&nbsp;<span id='coord14'>(<input type="text" class="sin" maxlength="6"/> , <input type="text" class="cos" maxlength="6"/>)</span>
+	</div>
+	<div id="q15">
+		<span id='deg15'><input type="text" class="deg"  maxlength="3"></input><span class='degsym'>&deg;</span></span>
+		<span id='rad15'><input type="text" class="rad" maxlength='6'>rad </span> 
+		&nbsp;&nbsp;&nbsp;<span id='coord15'>(<input type="text" class="sin" maxlength="6"/> , <input type="text" class="cos" maxlength="6"/>)</span>
+	</div>
+	<div id="q16">
+		<span id='deg16'><input type="text" class="deg"  maxlength="3"></input><span class='degsym'>&deg;</span></span>
+		<span id='rad16'><input type="text" class="rad" maxlength='6'>rad </span> 
+		&nbsp;&nbsp;&nbsp;<span id='coord16'>(<input type="text" class="sin" maxlength="6"/> , <input type="text" class="cos" maxlength="6"/>)</span>
+	</div>
+	<button type="button" onclick="check()">Check my answers</button>
+	</div>
+	<div id="timer" style="position:absolute;top:5px;"></div>
+	
+	<script type="text/javascript" src="circle.js"></script>
+
+</body>
+</html>
