@@ -16,18 +16,23 @@ function shuffle(array){
 }
 function check(){
 	var right=0;
+    count = 0;
 	for(var i in qs){
 		document.getElementById(i).disabled=true;
 		if(document.getElementById(i).value==qs[i].answer){
 			right++;
+            //document.getElementById("ans"+i).style.display="inline";
+            document.getElementById(i).style.border="1px solid green";
 		}else{
 			document.getElementById("ans"+i).style.display="inline";
 			document.getElementById(i).style.border="1px solid red";
 		}
 		
-		
+        //document.getElementById("qs").innerHTML += "You got " + right + " right";
+//		
 	}
-	alert("You got "+right+" right");
+    document.getElementById("numRight").innerHTML = "You got " + right + " right";
+	
 }
 
 function write(question){
